@@ -5,7 +5,7 @@
 import {Injectable} from '@angular/core';
 
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
-//import { HttpClient, HttpHeaders } from "@angular/common/http";
+//import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import 'rxjs/add/operator/toPromise';
 import {Hero} from "../models/hero";
 

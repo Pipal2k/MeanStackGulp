@@ -14,7 +14,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-//import { HttpClient, HttpHeaders } from "@angular/common/http";
+//import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 require("rxjs/add/operator/toPromise");
 var HeroService = (function () {
     function HeroService(http) {

@@ -3,14 +3,15 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 var DataAccess = require("../DataAccess");
+var mongoose_1 = require("mongoose");
 var mongoose = DataAccess.mongooseInstance;
 var mongooseConnection = DataAccess.mongooseConnection;
 var HeroSchema = (function () {
     function HeroSchema() {
     }
-    Object.defineProperty(HeroSchema, "schema", {
+    Object.defineProperty(HeroSchema, "heroSchema", {
         get: function () {
-            var schema = mongoose.Schema({
+            var heroSchema = new mongoose_1.Schema({
                 name: {
                     type: String,
                     required: true
@@ -24,14 +25,13 @@ var HeroSchema = (function () {
                     required: true
                 }
             });
-            return schema;
+            return heroSchema;
         },
         enumerable: true,
         configurable: true
     });
     return HeroSchema;
 }());
-var schema = mongooseConnection.model("Heroes", HeroSchema.schema);
-"";
+var schema = mongooseConnection.model("Heroes", HeroSchema.heroSchema);
 module.exports = schema;
 //# sourceMappingURL=HeroSchema.js.map

@@ -4,13 +4,34 @@
 
 import DataAccess = require('../DataAccess');
 import IHeroModel = require("./../../model/interfaces/HeroModel");
+import { Schema } from 'mongoose';
 
 var mongoose = DataAccess.mongooseInstance;
 var mongooseConnection = DataAccess.mongooseConnection;
 
 class HeroSchema {
 
-    static get schema () {
+    static get heroSchema()  {
+
+       
+        var heroSchema =  new Schema({
+            name : {
+                type: String,
+                required: true
+            },
+            power: {
+                type: String,
+                required: true
+            },
+            amountPeopleSaved: {
+                type: Number,
+                required: true
+            }
+        });
+
+        return heroSchema;
+    }
+    /*public static schema() : Schema {
         var schema =  mongoose.Schema({
             name : {
                 type: String,
@@ -27,7 +48,7 @@ class HeroSchema {
         });
 
         return schema;
-    }
+    }*/
 }
-var schema = mongooseConnection.model<IHeroModel>("Heroes", HeroSchema.schema);
-export = schema;""
+var schema = mongooseConnection.model<IHeroModel>("Heroes", HeroSchema.heroSchema);
+export = schema;

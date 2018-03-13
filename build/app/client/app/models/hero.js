@@ -3,7 +3,7 @@
  * Created by Moiz.Kachwala on 02-06-2016.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var Hero = (function () {
+var Hero = /** @class */ (function () {
     function Hero() {
     }
     return Hero;

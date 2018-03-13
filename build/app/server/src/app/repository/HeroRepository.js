@@ -14,7 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var HeroSchema = require("./../dataAccess/schemas/HeroSchema");
 var RepositoryBase = require("./BaseRepository");
-var HeroRepository = (function (_super) {
+var HeroRepository = /** @class */ (function (_super) {
     __extends(HeroRepository, _super);
     function HeroRepository() {
         return _super.call(this, HeroSchema) || this;

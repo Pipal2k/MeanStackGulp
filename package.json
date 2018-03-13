@@ -7,7 +7,7 @@
     "compile": "gulp compile",
     "build": "gulp build",
     "deploy": "concurrently --kill-others \"gulp watch\" \"node ./dist/server/bin/www\"",
-    "debug": "concurrently --kill-others \"gulp watch\" \"node-debug ./dist/server/bin/www\""
+    "debug": "concurrently --kill-others \"gulp debug\""
   },
   "keywords": [
     "Angular2",

@@ -16,30 +16,30 @@ var heroes_component_1 = require("./components/heroes/heroes.component");
 var dashboard_component_1 = require("./components/dashboard/dashboard.component");
 var hero_detail_component_1 = require("./components/heroDetail/hero-detail.component");
 var hero_service_1 = require("./services/hero.service");
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                http_1.HttpModule,
+                forms_1.FormsModule,
+                app_routing_1.routing
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                heroes_component_1.HeroesComponent,
+                dashboard_component_1.DashboardComponent,
+                hero_detail_component_1.HeroDetailComponent
+            ],
+            providers: [
+                hero_service_1.HeroService
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            http_1.HttpModule,
-            forms_1.FormsModule,
-            app_routing_1.routing
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            heroes_component_1.HeroesComponent,
-            dashboard_component_1.DashboardComponent,
-            hero_detail_component_1.HeroDetailComponent
-        ],
-        providers: [
-            hero_service_1.HeroService
-        ],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

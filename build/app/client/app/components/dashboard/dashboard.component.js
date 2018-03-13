@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var hero_service_1 = require("../../services/hero.service");
-var DashboardComponent = (function () {
+var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(router, heroService) {
         this.router = router;
         this.heroService = heroService;
@@ -30,16 +30,16 @@ var DashboardComponent = (function () {
         var link = ['/detail', hero._id];
         this.router.navigate(link);
     };
+    DashboardComponent = __decorate([
+        core_1.Component({
+            selector: 'my-dashboard',
+            templateUrl: './app/components/dashboard/dashboard.component.html',
+            styleUrls: ['./app/components/dashboard/dashboard.component.css']
+        }),
+        __metadata("design:paramtypes", [router_1.Router,
+            hero_service_1.HeroService])
+    ], DashboardComponent);
     return DashboardComponent;
 }());
-DashboardComponent = __decorate([
-    core_1.Component({
-        selector: 'my-dashboard',
-        templateUrl: './app/components/dashboard/dashboard.component.html',
-        styleUrls: ['./app/components/dashboard/dashboard.component.css']
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        hero_service_1.HeroService])
-], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

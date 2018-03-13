@@ -3,7 +3,7 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 var mongoose = require("mongoose");
-var RepositoryBase = (function () {
+var RepositoryBase = /** @class */ (function () {
     function RepositoryBase(schemaModel) {
         this._model = schemaModel;
     }

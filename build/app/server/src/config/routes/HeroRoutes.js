@@ -5,7 +5,7 @@
 var express = require("express");
 var HeroController = require("./../../controllers/HeroController");
 var router = express.Router();
-var HeroRoutes = (function () {
+var HeroRoutes = /** @class */ (function () {
     function HeroRoutes() {
         this._heroController = new HeroController();
     }

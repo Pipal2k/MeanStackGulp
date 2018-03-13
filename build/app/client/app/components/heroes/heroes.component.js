@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var hero_service_1 = require("../../services/hero.service");
 var router_1 = require("@angular/router");
-var HeroesComponent = (function () {
+var HeroesComponent = /** @class */ (function () {
     function HeroesComponent(router, heroService) {
         this.router = router;
         this.heroService = heroService;
@@ -48,15 +48,15 @@ var HeroesComponent = (function () {
         })
             .catch(function (error) { return _this.error = error; });
     };
+    HeroesComponent = __decorate([
+        core_1.Component({
+            selector: 'my-heroes',
+            templateUrl: './app/components/heroes/heroes.component.html'
+        }),
+        __metadata("design:paramtypes", [router_1.Router,
+            hero_service_1.HeroService])
+    ], HeroesComponent);
     return HeroesComponent;
 }());
-HeroesComponent = __decorate([
-    core_1.Component({
-        selector: 'my-heroes',
-        templateUrl: './app/components/heroes/heroes.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        hero_service_1.HeroService])
-], HeroesComponent);
 exports.HeroesComponent = HeroesComponent;
 //# sourceMappingURL=heroes.component.js.map

@@ -4,7 +4,7 @@
  */
 var Mongoose = require("mongoose");
 var Constants = require("./../../config/constants/constants");
-var DataAccess = (function () {
+var DataAccess = /** @class */ (function () {
     function DataAccess() {
         DataAccess.connect();
     }

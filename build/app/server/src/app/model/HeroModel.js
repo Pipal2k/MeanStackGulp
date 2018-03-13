@@ -2,7 +2,7 @@
 /**
  * Created by Moiz.Kachwala on 15-06-2016.
  */
-var HeroModel = (function () {
+var HeroModel = /** @class */ (function () {
     function HeroModel(heroModel) {
         this._heroModel = heroModel;
     }

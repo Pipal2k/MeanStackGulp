@@ -3,7 +3,7 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 var HeroBusiness = require("./../app/business/HeroBusiness");
-var HeroController = (function () {
+var HeroController = /** @class */ (function () {
     function HeroController() {
     }
     HeroController.prototype.create = function (req, res) {

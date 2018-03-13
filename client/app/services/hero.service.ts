@@ -5,9 +5,9 @@
 import {Injectable} from '@angular/core';
 
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
-//import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
+// import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import 'rxjs/add/operator/toPromise';
-import {Hero} from "../models/hero";
+import {Hero} from '../models/hero';
 
 @Injectable()
 export class HeroService {
@@ -42,7 +42,7 @@ export class HeroService {
             'Content-Type': 'application/json'});
 
         return this.http
-            .post(this.heroesUrl, JSON.stringify(hero), {headers:headers})
+            .post(this.heroesUrl, JSON.stringify(hero), {headers: headers})
             .toPromise()
             .then(response => response.json().data)
             .catch(this.handleError);
@@ -53,7 +53,7 @@ export class HeroService {
         headers.append('Content-Type', 'application/json');
 
         let url = `${this.heroesUrl}/${hero._id}`;
- 
+
         return this.http
             .put(url, JSON.stringify(hero), {headers: headers})
             .toPromise()
@@ -66,9 +66,9 @@ export class HeroService {
         headers.append('Content-Type', 'application/json');
 
         let url = `${this.heroesUrl}/${hero._id}`;
-       
+
         let requestOptions = new RequestOptions({ headers: headers });
-       
+
         return this.http
             .delete(url, requestOptions)
             .toPromise()

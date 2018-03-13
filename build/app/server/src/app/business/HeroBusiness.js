@@ -3,7 +3,7 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 var HeroRepository = require("./../repository/HeroRepository");
-var HeroBusiness = (function () {
+var HeroBusiness = /** @class */ (function () {
     function HeroBusiness() {
         this._heroRepository = new HeroRepository();
     }

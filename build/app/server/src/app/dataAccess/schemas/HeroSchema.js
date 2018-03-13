@@ -6,7 +6,7 @@ var DataAccess = require("../DataAccess");
 var mongoose_1 = require("mongoose");
 var mongoose = DataAccess.mongooseInstance;
 var mongooseConnection = DataAccess.mongooseConnection;
-var HeroSchema = (function () {
+var HeroSchema = /** @class */ (function () {
     function HeroSchema() {
     }
     Object.defineProperty(HeroSchema, "heroSchema", {

@@ -5,7 +5,7 @@
 var express = require("express");
 var HeroRoutes = require("../routes/HeroRoutes");
 var app = express();
-var Routes = (function () {
+var Routes = /** @class */ (function () {
     function Routes() {
     }
     Object.defineProperty(Routes.prototype, "routes", {

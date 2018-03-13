@@ -15,13 +15,6 @@ const gulp = require("gulp"),
     runSequence = require('run-sequence'),
     nodemon = require('gulp-nodemon');
 
-
-    const path = require('path');
-    const writeSourceMapsOptions = {
-        sourceRoot: (file) => {
-          return path.posix.relative(path.posix.dirname(file.relative), "");
-        },
-      };
 /**
  * Remove build directory.
  */
@@ -38,21 +31,8 @@ gulp.task('build:server', function () {
         .pipe(sourcemaps.init())
         .pipe(tsProject());
     return tsResult.js
-    .pipe(sourcemaps.mapSources(function(sourcePath, file) {
-        // source paths are prefixed with '../src/'
-        return '../../server/src/' + sourcePath;
-      }))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/server'))
-        //.pipe(sourcemaps.write('./',{
-        //mapSources: (path) => path, // This affects the "sources" attribute even if it is a no-op. I don't know why.
-        /*sourceRoot: (file) => {
-          return path.relative(file.relative, path.join(file.cwd, 'src'));
-        }
-      }))*/
-        /*.pipe(sourcemaps.write('.'))
-        .pipe(sourcemaps.write(writeSourceMapsOptions))*/
-       // .pipe(gulp.dest('dist/server'));
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/server'));
 });
 
 gulp.task('build:client', function () {
@@ -135,19 +115,6 @@ gulp.task("css", () => {
 gulp.task('start', function () {
     nodemon({
         script: 'dist/server/bin/www'
-        , ext: 'html js'
-        , ignore: ['ignored.js']
-        , tasks: ['tslint']
-    })
-        .on('restart', function () {
-            console.log('restarted!');
-        });
-});
-
-gulp.task('debug', function () {
-    nodemon({
-        script: 'dist/server/bin/www',
-        exec: 'node --inspect'
         , ext: 'html js'
         , ignore: ['ignored.js']
         , tasks: ['tslint'],

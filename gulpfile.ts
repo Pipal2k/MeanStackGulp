@@ -61,12 +61,15 @@ gulp.task('build:client', function () {
         .pipe(sourcemaps.init())
         .pipe(tsProject());
     return tsResult.js
+    //.pipe(sourcemaps.write('.'))
+    //.pipe(gulp.dest('dist/client'));
     .pipe(sourcemaps.mapSources(function(sourcePath, file) {
         // source paths are prefixed with '../src/'
-        return '../../client/src/' + sourcePath;
+        return '../../client/' + sourcePath;
       }))
       .pipe(sourcemaps.write('.'))
        .pipe(gulp.dest('dist/client'));
+
 });
 
 /**

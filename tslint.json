@@ -15,7 +15,7 @@
     "eofline": true,
     "forin": true,
     "indent": [
-      true,
+      false,
       "spaces"
     ],
     "label-position": true,
@@ -45,7 +45,7 @@
     "no-empty": false,
     "no-eval": true,
     "no-inferrable-types": true,
-    "no-shadowed-variable": true,
+    "no-shadowed-variable": false,
     "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
@@ -73,7 +73,7 @@
       true,
       "allow-null-check"
     ],
-    "typedef-whitespace": [
+    /*"typedef-whitespace": [
       true,
       {
         "call-signature": "nospace",
@@ -82,7 +82,7 @@
         "property-declaration": "nospace",
         "variable-declaration": "nospace"
       }
-    ],
+    ],*/
     "variable-name": false,
     "whitespace": [
       true,

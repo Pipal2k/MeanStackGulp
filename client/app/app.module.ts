@@ -1,33 +1,32 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpModule }     from '@angular/http';
+import { APP_BASE_HREF } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+import { AppComponent } from './app.component';
+import { routes } from './app.routes';
 
-import { AppComponent }  from './app.component';
-import { routing }       from './app.routing';
+import { LoginModule } from './login/login.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { SharedModule } from './shared/shared.module';
 
-import { HeroesComponent }      from './components/heroes/heroes.component';
-import { DashboardComponent }   from './components/dashboard/dashboard.component';
-import { HeroDetailComponent }  from './components/heroDetail/hero-detail.component';
-
-import { HeroService }  from './services/hero.service';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    HttpModule,
-    FormsModule,
-    routing
-    ],
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    DashboardComponent,
-    HeroDetailComponent
-  ],
-  providers: [
-    HeroService
-  ],
-  bootstrap: [AppComponent]
+	imports: [
+		BrowserModule,
+		HttpModule,
+		RouterModule.forRoot(routes),
+		LoginModule,
+		DashboardModule,
+		SharedModule.forRoot()
+	],
+	declarations: [AppComponent],
+	providers: [{
+		provide: APP_BASE_HREF,
+		useValue: '<%= APP_BASE %>'
+	}],
+	bootstrap: [AppComponent]
+
 })
+
 export class AppModule { }

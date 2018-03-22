@@ -1,32 +1,52 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script>document.write('<base href="' + document.location + '" />');</script>
-  <title>Angular 2 QuickStart</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-
-  <!-- 1. Load libraries -->
-  <!-- Polyfill(s) for older browsers -->
-  <script src="libs/core-js/client/shim.min.js"></script>
-  <script src="libs/zone.js/dist/zone.js"></script>
-  <script src="libs/reflect-metadata/Reflect.js"></script>
-  <script src="libs/systemjs/dist/system.src.js"></script>
-
-  <!-- 2. Configure SystemJS -->
-  <script src="systemjs.config.js"></script>
-  <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
+    <base href="<%= APP_BASE %>">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= APP_TITLE %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- inject:css -->
+    <!-- endinject -->
 </head>
-
-<!-- 3. Display the application -->
-
 <body>
-    <my-app>Loading...</my-app>
+
+    <sd-app>
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </sd-app>
+
+    <script>
+    // Fixes undefined module function in SystemJS bundle
+    function module() {}
+    </script>
+
+    <!-- shims:js -->
+    <!-- endinject -->
+
+    <% if (ENV === 'dev') { %>
+    <script src="<%= APP_BASE %>app/system-config.js"></script>
+    <% } %>
+
+    <!-- libs:js -->
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    <% if (ENV === 'dev') { %>
+    <script>
+        System.import('<%= BOOTSTRAP_MODULE %>')
+        .catch(function (e) {
+            console.error(e,
+                'Report this error at https://github.com/mgechev/angular2-seed/issues');
+        });
+    </script>
+    <% } %>
+
 </body>
 </html>

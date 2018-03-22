@@ -2,20 +2,31 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
+    "declaration": false,
+    "removeComments": true,
+    "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [ "es6","es2015", "dom" ],
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
     "typeRoots": [
-      "../node_modules/@types/"
+      "../node_modules/@types",
+      "../node_modules"
+    ],
+    "types": [
+      "core-js",
+      "express",
+      "jasmine",
+      "node",
+      "protractor",
+      "systemjs"
     ]
   },
-  "compileOnSave": true,
-  "exclude": [
-    "node_modules/*",
-    "**/*-aot.ts"
-  ]
+  "compileOnSave": false
 }
